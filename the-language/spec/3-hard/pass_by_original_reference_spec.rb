@@ -6,7 +6,7 @@ RSpec.describe 'Pass by reference vs Pass by value' do
     y = x
     x += 2
 
-    expect(y).to eq(__)
+    expect(y).to eq(123)
   end
 
   # ---DEPRECATED KOAN---
@@ -28,7 +28,7 @@ RSpec.describe 'Pass by reference vs Pass by value' do
     y = x
     x.map! { |number| number * 2 }
 
-    expect(y).to eq(__)
+    expect(y).to eq([2, 4, 6])
   end
 
   class Initial
@@ -51,7 +51,7 @@ RSpec.describe 'Pass by reference vs Pass by value' do
     other = Other.new
     initial.x = other.value
 
-    expect(initial.x == other.value).to be(__)
+    expect(initial.x == other.value).to be(true)
     expect { expect(initial.x.object_id == other.value.object_id).to be(__) }.to raise_error(RSpec::Expectations::ExpectationNotMetError)
   end
 end
