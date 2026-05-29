@@ -5,6 +5,7 @@ class Dice
     new_rolls =[]
     amount.times do
       new_rolls << rand(1..6)
+      @values = new_rolls
     def values
       @values ||= []
     end
